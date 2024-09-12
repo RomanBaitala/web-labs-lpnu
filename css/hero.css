@@ -1,0 +1,58 @@
+.hero{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+}
+
+.hero .container{
+    display: flex;
+    justify-content: start;
+}
+
+.hero-text-box{
+    margin-right: 49px;
+    margin-top: 298px;
+    width: 481px;
+}
+
+.hero-title{
+    color: #000;
+    font-family: "Playfair Display";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.hero-subtitile{
+    color: #7D7987;
+    font-family: "Mulish";
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 300;
+    width: 450px;
+    margin-top: 20px;
+    margin-bottom: 39px;
+    line-height: 30px;
+}
+
+.hero-button{
+    border-radius: 8px;
+    border: 1px solid #FB8F1D;
+    color: #FFF;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    width: 132px;
+    background: #FB8F1D;
+}
+
+.hero-img{
+    width: 599px;
+    height: 542px;
+    margin-top: 146px;
+    margin-bottom: 116px;
+    margin-right: 92px;
+}
