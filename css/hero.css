@@ -1,7 +1,12 @@
 .hero{
     display: flex;
-    padding-left: 40px;
+    justify-content: start;
     width: 100%;
+}
+
+.hero .container{
+    display: flex;
+    justify-content: start;
 }
 
 .hero-text-box{
@@ -27,6 +32,7 @@
     width: 450px;
     margin-top: 20px;
     margin-bottom: 39px;
+    line-height: 30px;
 }
 
 .hero-button{
@@ -48,4 +54,5 @@
     height: 542px;
     margin-top: 146px;
     margin-bottom: 116px;
+    margin-right: 92px;
 }

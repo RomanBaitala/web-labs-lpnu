@@ -2,6 +2,10 @@
     background-color: #F8F8F8;
 }
 
+.footer .container{
+    max-width: 1220px;
+}
+
 .footer-copyright{
     display: flex;
     justify-content: space-between;
@@ -16,7 +20,6 @@
     font-style: normal;
     font-weight: 300;
     padding-top: 39px;
-    margin-left: -15px;
     line-height: 28px;
 }
 
@@ -29,7 +32,7 @@
     display: flex;
     justify-content: center;
     margin-top: 32px;
-    margin-bottom: 41px;
+    padding-bottom: 41px;
 }
 
 .footer-socialr-icon:not(:last-child){

@@ -1,12 +1,13 @@
 .stories{
     padding-bottom: 164px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .stories-box{
     display: flex;
     justify-content: space-between;
-    padding-left: 22px;
-    padding-right: 22px;
     max-width: 1220px;
 }
 
@@ -33,6 +34,7 @@
     height: 233px;
     border-radius: 8px;
     margin-bottom: 13px;
+    object-fit: cover;
 }
 
 .stories-list-item{
