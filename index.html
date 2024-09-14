@@ -26,28 +26,51 @@
                     <li class="nav-list-item"><a class="nav-list-link" href="./index.html">Partner</a></li>
                 </ul>
             </nav>
-            <svg width='41' height="41">
+            <svg class="header-logo" width='41' height="41">
                 <use href="./images/logo.svg#logo" />
             </svg>
             <div class="header-button-box">
                 <button class="header-button button-login">Login</button>
                 <button class="header-button button-register">Register</button>
             </div>
+            <button class="mob-menu menu-open-button">
+                <img src="./images/menu-svgrepo-com.svg#mob-menu" alt="" class="mob-menu-icon" />
+            </button>
+        </div>
+        <div class="mobile-menu is-hidden">
+            <div class="mob-container">
+                <button type="button" class="menu-close-button">
+                    <svg height="35px" width="35px" id="close-icon" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="512px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
+                </button>
+                <nav class="mob-navigation">
+                    <ul class="mob-nav-list">
+                        <li class="mob-nav-list-item"><a class="mob-nav-list-link" href="./index.html">Home</a></li>
+                        <li class="mob-nav-list-item"><a class="mob-nav-list-link" href="./index.html">Destination</a></li>
+                        <li class="mob-nav-list-item"><a class="mob-nav-list-link" href="./index.html">About</a></li>
+                        <li class="mob-nav-list-item"><a class="mob-nav-list-link" href="./index.html">Partner</a></li>
+                    </ul>
+                </nav>
+                <div class="mob-header-button-box">
+                    <button class="mob-header-button button-login">Login</button>
+                    <button class="mob-header-button button-register">Register</button>
+                </div>
+            </div>
         </div>
     </header>
     <main>
-        <div class="container">
             <section class="hero">
                 <div class="container">
                     <div class="hero-text-box">
                         <h1 class="hero-title">Guides by Thousand <br />
                             Sunny</h1>
-                        <p class="hero-subtitile">Packed with tips and advice from our on-the-ground <br /> experts, 
-                            our city guides app (iOS and Android) is the<br /> ultimate resource 
+                        <p class="hero-subtitile">Packed with tips and advice from our on-the-ground experts, 
+                            our city guides app (iOS and Android) is the ultimate resource 
                             before and during a trip.</p>
                         <button class="hero-button">Download</button>
                     </div>
-                    <img src="./images/hero.png" alt="hero image" class="hero-img">
+                    <div class="hero-img-container">
+                        <img src="./images/hero.png" alt="hero image" class="hero-img">
+                    </div>
                 </div>
             </section>
             <section class="info">
@@ -100,51 +123,60 @@
                     </div>
                     <ul class="stories-list">
                         <li class="stories-list-item">
-                            <img src="./images/pic-1.png" alt="" class="stories-img">
-                            <div class="stories-text-box">
-                                <h4 class="stories-box-title">The many benefits of  
-                                    taking a healing holiday</h4>
-                                <p class="stories-box-text">‘Helaing holidays’ are on the rise 
-                                    tohelp maximise your health and happines...</p>
-                                <a href="/index.html" class="stories-box-link">Read more</a>
+                            <div class="stories-container">
+                                <img src="./images/pic-1.png" alt="" class="stories-img">
+                                <div class="stories-text-box">
+                                    <h4 class="stories-box-title">The many benefits of  
+                                        taking a healing holiday</h4>
+                                    <p class="stories-box-text">‘Helaing holidays’ are on the rise 
+                                        tohelp maximise your health and happines...</p>
+                                    <a href="/index.html" class="stories-box-link">Read more</a>
+                                </div>
+                            </div>
+                            
+                        </li>
+                        <li class="stories-list-item">
+                            <div class="stories-container">
+                                <img src="./images/pic-2.png" alt="" class="stories-img">
+                                <div class="stories-text-box">
+                                    <h4 class="stories-box-title">The best Kyoto restaurant
+                                        to try Japanese food</h4>
+                                    <p class="stories-box-text">From tofu to teahouses, here’s our guide to Kyoto’s best restaurants
+                                        to visit...</p>
+                                    <a href="/index.html" class="stories-box-link">Read more</a>
+                                </div>
                             </div>
                         </li>
                         <li class="stories-list-item">
-                            <img src="./images/pic-2.png" alt="" class="stories-img">
-                            <div class="stories-text-box">
-                                <h4 class="stories-box-title">The best Kyoto restaurant
-                                    to try Japanese food</h4>
-                                <p class="stories-box-text">From tofu to teahouses, here’s our guide to Kyoto’s best restaurants
-                                    to visit...</p>
-                                <a href="/index.html" class="stories-box-link">Read more</a>
+                            <div class="stories-container">
+                                <img src="./images/pic-3.png" alt="" class="stories-img">
+                                <div class="stories-text-box">
+                                    <h4 class="stories-box-title">Skip Chichen Itza and head
+                                        to this remote Yucatan</h4>
+                                    <p class="stories-box-text">It’s remote and challenging to get,
+                                        but braving the jungle and exploring
+                                        these ruins without the...</p>
+                                    <a href="/index.html" class="stories-box-link">Read more</a>
+                                </div>
                             </div>
                         </li>
                         <li class="stories-list-item">
-                            <img src="./images/pic-3.png" alt="" class="stories-img">
-                            <div class="stories-text-box">
-                                <h4 class="stories-box-title">Skip Chichen Itza and head
-                                    to this remote Yucatan</h4>
-                                <p class="stories-box-text">It’s remote and challenging to get,
-                                    but braving the jungle and exploring
-                                    these ruins without the...</p>
-                                <a href="/index.html" class="stories-box-link">Read more</a>
-                            </div>
-                        </li>
-                        <li class="stories-list-item">
-                            <img src="./images/pic-4.png" alt="" class="stories-img">
-                            <div class="stories-text-box">
-                                <h4 class="stories-box-title">Surf’s up at these beginner
-                                    spots around the world</h4>
-                                <p class="stories-box-text">If learning to surf has in on your to-
-                                    do list for a while, the good news
-                                    is: it’s never too late...</p>
-                                <a href="/index.html" class="stories-box-link">Read more</a>
+                            <div class="stories-container">
+                                <img src="./images/pic-4.png" alt="" class="stories-img">
+                                <div class="stories-text-box">
+                                    <h4 class="stories-box-title">Surf’s up at these beginner
+                                        spots around the world</h4>
+                                    <p class="stories-box-text">If learning to surf has in on your to-
+                                        do list for a while, the good news
+                                        is: it’s never too late...</p>
+                                    <a href="/index.html" class="stories-box-link">Read more</a>
+                                </div>
                             </div>
                         </li>
                     </ul>
                 </div>
             </section>
-        </div>
+        <!-- </div> -->
     </main>
     <footer class="footer">
         <div class="container">
@@ -187,5 +219,6 @@
             </div>
         </div>
     </footer>
+    <script src="./js/mob-menu.js"></script>
 </body>
 </html>
