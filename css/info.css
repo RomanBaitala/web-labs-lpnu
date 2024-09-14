@@ -15,12 +15,11 @@
 
 .info-content{
     display: flex;
-    margin-right: 50px;
+    flex-direction: column-reverse;
 }
 
 .info-text-box{
-    width: 450px;
-    margin-right: 24px;
+    width: 290px;
     margin-top: 85px;
 }
 
@@ -36,28 +35,67 @@
     line-height: 50px;
 }
 
-.info-stars{
+.info-stars {
+    display: flex;
     margin-bottom: 30px;
 }
 
 .info-stars-icon:not(:last-child){
-    margin-right: 16px;
+    margin-right: 17px;
+}
+
+.info-stars-icon {
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    transform: scale(0);
+    animation: fadeInScale 0.5s forwards ease-in-out;
+}
+
+.info-stars-icon:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.info-stars-icon:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.info-stars-icon:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.info-stars-icon:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.info-stars-icon:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .info-quote{
     color: #000;
     font-family: "Mulish";
-    font-size: 24px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 36px;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 .info-person-name{
     color: #000;
     font-family: "Inter";
-    font-size: 22px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: 48px;
@@ -66,17 +104,17 @@
 .info-person-position{
     color: rgba(0, 0, 0, 0.85);
     font-family: "Inter";
-    font-size: 18px;
+    font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: 48px;
 }
 
 .info-img-owerflow{
-    height: 491px;
-    width: 384px;
+    width: 290px;
+    height: 395px;
     overflow: hidden;
-    margin-left: 160px;
+    margin: 0 auto;
     border-radius: 12px;
 }
 
@@ -84,4 +122,60 @@
     margin-left: -160px;
     width: 773px;
     height: 598px;
+}
+
+@media screen and (min-width: 768px) {
+    .info-quote{
+        font-size: 24px;
+    }
+
+    .info-person-name{
+        font-size: 22px;
+    }
+
+    .info-person-position{
+        font-size: 18px;
+    }
+
+    .info-text-box{
+        margin-right: 24px; 
+        width: 100%;
+        max-width: 550px;
+    }
+
+    .info-img-owerflow{
+        height: 491px;
+        width: 524px;
+    }
+
+    .info-img{
+        margin-left: -100px;
+    }
+}
+
+@media screen and (min-width: 1220px) {
+    .info-content{
+        flex-direction: row;
+        margin-right: 50px;
+    }
+
+    .info-img-owerflow{
+        margin: 0;
+        margin-left: 160px;
+    }
+
+    .info-text-box{
+        width: 450px;
+    }
+
+    .info-img-owerflow{
+        height: 491px;
+        width: 384px;
+    }
+
+    .info-img{ 
+        width: 773px;
+        height: 598px;
+        margin-left: -160px;
+    }
 }

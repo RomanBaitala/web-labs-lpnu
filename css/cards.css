@@ -1,5 +1,5 @@
 .stories{
-    padding-bottom: 164px;
+    padding-bottom: 64px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -8,7 +8,10 @@
 .stories-box{
     display: flex;
     justify-content: space-between;
-    max-width: 1220px;
+    max-width: 1180px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 35px;
 }
 
 .stories-title{
@@ -19,30 +22,36 @@
     font-style: normal;
     font-weight: 700;
     text-align: start;
-    margin-top: 146px;
-    margin-bottom: 54px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .stories-list{
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    gap: 60px;
+
 }
 
 .stories-img{
-    width: 266px;
-    height: 233px;
+    width: 290px;
+    height: 293px;
     border-radius: 8px;
     margin-bottom: 13px;
     object-fit: cover;
 }
 
-.stories-list-item{
-    width: 266px;
+.stories-text-box,
+.stories-container{
+    width: 290px;
 }
 
-.stories-list-item:not(:last-child){
-    margin-right: 30px;
+.stories-list-item{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .stories-view-all-link{
@@ -51,7 +60,6 @@
     font-size: 17px;
     font-style: normal;
     font-weight: 600;
-    margin-top: 165px;
 }
 
 .stories-view-all-icon{
@@ -69,7 +77,7 @@
     font-style: normal;
     font-weight: 700;
     margin: 0;
-    margin-bottom: 13px;
+    margin-bottom: 20px;
 }
 
 .stories-box-text{
@@ -87,5 +95,55 @@
     font-size: 15px;
     font-style: normal;
     font-weight: 600;
-    margin-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+    .stories{
+        padding-bottom: 164px;
+    }
+
+    .stories-box{
+        flex-direction: row;
+        align-items: normal;
+        margin-bottom: 0;
+    }
+
+    .stories-text-box,
+    .stories-contaoner{
+        width: 296px;
+    }
+
+    .stories-title{
+        margin-top: 146px;
+        margin-bottom: 54px;
+    }
+
+    .stories-view-all-link{
+        margin-top: 165px;
+        margin-bottom: 0;
+    }
+
+    .stories-list-item{
+        width: calc((100% - 90px) / 2);
+    }
+}
+
+@media screen and (min-width: 1220px) {
+    .stories-list{
+        gap: 30px;
+    }
+
+    .stories-img{
+        width: 266px;
+        height: 233px;
+    }
+
+    .stories-text-box,
+    .stories-contaoner{
+        width: 266px;
+    }
+
+    .stories-list-item{
+        width: calc((100% - 90px) / 4);
+    }
 }
