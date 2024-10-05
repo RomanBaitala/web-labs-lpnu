@@ -87,4 +87,97 @@ document.getElementById('searchInput').addEventListener('input', (event) => {
   });
 
 
-
+  const modal = document.getElementById('carModal');
+  const closeModalBtn = document.getElementsByClassName('close')[0];
+  const modalTitle = document.getElementById('modalTitle');
+  const submitCarModalBtn = document.getElementById('submitCarModal');
+  
+  function openModal() {
+    modal.style.display = 'flex';
+  }
+  
+  closeModalBtn.onclick = function() {
+    modal.style.display = 'none';
+  }
+  
+  window.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+    }
+  }
+  
+  document.getElementById('carFormModal').addEventListener('submit', (event) => {
+    event.preventDefault();
+  
+    const name = document.getElementById('carNameModal').value;
+    const price = Number(document.getElementById('carPriceModal').value);
+    const img_link = document.getElementById('carImgLinkModal').value;
+    if (price < 0){
+      alert("The prise is negative value!")
+    }
+    else {
+      if (submitCarModalBtn.textContent === 'Add Car') {
+        const newCar = {
+          id: items.length + 1,
+          name,
+          price,
+          img_link
+        };
+    
+        items.push(newCar);
+      } 
+      else {
+        const carId = submitCarModalBtn.getAttribute('data-id');
+        const carIndex = items.findIndex(item => item.id == carId);
+    
+        if (carIndex !== -1) {
+          items[carIndex].name = name ? name > 0 : alert("The value is negative") ;
+          items[carIndex].price = price;
+          items[carIndex].img_link = img_link;
+        }
+    
+        submitCarModalBtn.textContent = 'Add Car';
+        submitCarModalBtn.removeAttribute('data-id');
+      }
+      sortCars(items);
+      displayTotal(items);
+      displayTotalPrice(items);
+  
+      modal.style.display = 'none';
+  
+      document.getElementById('carNameModal').value = '';
+      document.getElementById('carPriceModal').value = '';
+      document.getElementById('carImgLinkModal').value = './img/img-not-found.png';
+    }
+  });
+  
+  document.getElementById('dataDisplay').addEventListener('click', (event) => {
+    if (event.target.closest('.card-item-btn-res')) {
+      const carId = event.target.closest('li').id;
+      const car = items.find(item => item.id == carId);
+  
+      if (car) {
+        document.getElementById('carNameModal').value = car.name;
+        document.getElementById('carPriceModal').value = car.price;
+        document.getElementById('carImgLinkModal').value = car.img_link;
+  
+        modalTitle.textContent = 'Edit Car';
+        submitCarModalBtn.textContent = 'Update Car';
+        submitCarModalBtn.setAttribute('data-id', car.id);
+  
+        openModal();
+      }
+    }
+  });
+  
+  document.getElementById('addCarBtn').addEventListener('click', () => {
+    document.getElementById('carNameModal').value = '';
+    document.getElementById('carPriceModal').value = '';
+    document.getElementById('carImgLinkModal').value = './img/img-not-found.png';
+  
+    modalTitle.textContent = 'Add Car';
+    submitCarModalBtn.textContent = 'Add Car';
+    submitCarModalBtn.removeAttribute('data-id');
+  
+    openModal();
+  });
