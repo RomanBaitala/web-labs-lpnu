@@ -2,7 +2,8 @@ const items = [
     { id: 1, name: 'Porshe Panamera', price: 100000, img_link: './img/img-not-found.png'},
     { id: 2, name: 'Opel Astra', price: 15000, img_link: './img/img-not-found.png' },
     { id: 3, name: 'Ford Focus', price: 12000, img_link: './img/img-not-found.png' },
-    { id: 4, name: 'Volvo XC90', price: 20000, img_link: './img/img-not-found.png' }
+    { id: 4, name: 'Volvo XC90', price: 20000, img_link: './img/img-not-found.png' },
+    { id: 5, name: 'Volvo XC80', price: 150000, img_link: './img/img-not-found.png' }
   ];
 
 function displayData(data) {
@@ -84,4 +85,6 @@ document.getElementById('searchInput').addEventListener('input', (event) => {
     displayTotal(filteredItems);
     displayTotalPrice(filteredItems);
   });
+
+
 

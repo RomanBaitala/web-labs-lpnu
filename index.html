@@ -22,13 +22,31 @@
         <input type="text" id="searchInput" placeholder="Search cars" />
     </header>
     <main>
-        <aside>
-            <h3 class="filer">Info</h3>
-            <!-- Write total amount of cars-->
-            <div class="car-total-box" id="car-total-box"></div>
-            <div class="car-total-box" id="car-total-price"></div>
-        </aside>
+        <section>
+            <aside>
+                <h3 class="filer">Info</h3>
+                <!-- Write total amount of cars-->
+                <div class="car-total-box" id="car-total-box"></div>
+                <div class="car-total-box" id="car-total-price"></div>
+                <button type="button" id="addCarBtn" class="open-modal-btn">Add New Car</button>
+    
+            </aside>
+        </section>
+        <!-- Модальне вікно -->
+        <div id="carModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle">Add Car</h2>
+                <form id="carFormModal">
+                <input type="text" id="carNameModal" placeholder="Car Name" required />
+                <input type="number" id="carPriceModal" placeholder="Car Price" required min='0'/>
+                <input type="text" id="carImgLinkModal" placeholder="Image Link" value="./img/img-not-found.png" />
+                <button type="submit" id="submitCarModal">Add Car</button>
+                </form>
+            </div>
+        </div>
         <section class="cards">
+
             <div class="car-list-header">
                 <h2 class="car-list">Car list</h2>
                 <!-- Sort Dropdown -->
