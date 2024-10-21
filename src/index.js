@@ -227,3 +227,28 @@ document.getElementById('addCarBtn').addEventListener('click', () => {
 
   openModal();
 });
+
+
+
+
+const promise = new Promise((res, rej) => {
+  const result = true
+
+  setTimeout(() => {
+    if (result) {
+      res("Successul operation")
+    } else {
+      rej("Operation rejected")
+    }
+  }, 5000)
+})
+
+// promise.then(()=>{
+//   console.log("Succesful")
+// }).catch(()=>{
+//   console.log("Rejected")
+// })
+
+const asnc = async () =>{
+  await promise
+} 
