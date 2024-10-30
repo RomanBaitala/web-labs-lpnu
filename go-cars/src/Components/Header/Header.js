@@ -1,21 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import Logo from '../Logo/Logo';
 import Navigation from './Navigation';
-import LoginLang from './LoginLang';
+import LoginLang from './Login';
 import { Container } from '../Container/Container';
-
-const SHeader = styled.header `
-`
-
-const HeaderWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: none;
-    max-width: 1220px;
-    margin: 0 auto;
-`;
+import { SHeader, HeaderWrapper } from './Header.styled';
 
 const Header = () => {
     return (

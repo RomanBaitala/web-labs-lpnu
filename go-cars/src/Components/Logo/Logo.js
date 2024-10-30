@@ -1,12 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import logo from '../../img/car-logo.svg'
+import { LogoWrapper } from './Logo.styled';
 
-const LogoWrapper = styled.div`
-    img {
-        height: 40px;
-    }
-`;
 
 const Logo = () => {
     return (

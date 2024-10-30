@@ -1,18 +1,17 @@
-import Header from './Components/Header/Header';
-import Hero from './Components/Hero/Hero';
-import AboutUs from './Components/AboutUs/AboutUs';
-import Footer from './Components/Footer/Footer';
-import RecommendedCars from './Components/Car/RecomenddedCars';
 import { Main } from './App-styled';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './pages/home-page';
+import CarsPage from './pages/cars-page';
+import ItemPage from './pages/item-page';
 
 function App() {
   return (
     <Main>
-      <Header/>
-      <Hero/>
-      <AboutUs/>
-      <RecommendedCars/>
-      <Footer/>
+      <Routes>
+        <Route index element={<HomePage/>} />
+        <Route path='/cars' element={<CarsPage/>}/>
+        <Route path='/car/:id' element={<ItemPage/>}/>
+      </Routes>
     </Main>
   );
 }
