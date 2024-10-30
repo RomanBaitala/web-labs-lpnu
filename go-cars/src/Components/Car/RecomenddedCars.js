@@ -1,45 +1,7 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import CarCard from './CarItem';
 import { Container } from '../Container/Container';
-
-const Section = styled.section`
-  padding: 40px;
-  background-color: #141b24;
-`;
-
-const RecommendWrapper = styled.div`
-    max-width: 1220px;
-    margin: 0 auto;
-`;
-
-const Heading = styled.h2`
-  color: white;
-  font-size: 2em;
-  margin-bottom: 20px;
-`;
-
-const CarsContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-`;
-
-const LoadMoreButton = styled.button`
-  background-color: #007BFF;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  margin-top: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: #0056b3;
-  }
-`;
+import { Section, RecommendWrapper, Heading, CarsContainer, LoadMoreButton } from './RecomenddedCars.styled';
 
 const carsData = [
   {
@@ -105,7 +67,7 @@ const carsData = [
 ];
 
 const RecommendedCars = () => {
-  const [visibleCars, setVisibleCars] = useState(3); 
+  const [visibleCars, setVisibleCars] = useState(3);
 
   const handleLoadMore = () => {
     setVisibleCars((prevVisibleCars) => prevVisibleCars + 3);
@@ -113,19 +75,19 @@ const RecommendedCars = () => {
 
   return (
     <Section>
-        <Container>
-            <RecommendWrapper>
-                <Heading>Recommended Cars</Heading>
-                <CarsContainer>
-                    {carsData.slice(0, visibleCars).map((car, index) => (
-                    <CarCard key={index} car={car} />
-                    ))}
-                </CarsContainer>
-                    {visibleCars < carsData.length && (
-                    <LoadMoreButton onClick={handleLoadMore}>Load More</LoadMoreButton>
-                )}
-            </RecommendWrapper>
-        </Container>
+      <Container>
+        <RecommendWrapper>
+          <Heading>Recommended Cars</Heading>
+          <CarsContainer>
+            {carsData.slice(0, visibleCars).map((car, index) => (
+              <CarCard key={index} car={car} />
+            ))}
+          </CarsContainer>
+          {visibleCars < carsData.length && (
+            <LoadMoreButton onClick={handleLoadMore}>Load More</LoadMoreButton>
+          )}
+        </RecommendWrapper>
+      </Container>
     </Section>
   );
 };

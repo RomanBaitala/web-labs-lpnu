@@ -1,17 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-
 import { IoPerson } from 'react-icons/io5';
-
-const LoginLangWrapper = styled.div`
-    display: flex;
-    gap: 20px;
-
-    .login a {
-        color: white;
-        text-decoration: none;
-    }
-`;
+import { LoginLangWrapper } from './LoginLang.styled';
 
 const LoginLang = () => {
     return (

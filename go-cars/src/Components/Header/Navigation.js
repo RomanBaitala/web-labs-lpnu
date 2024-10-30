@@ -1,18 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-
-const NavWrapper = styled.nav`
-    ul {
-        display: flex;
-        list-style: none;
-        gap: 20px;
-    }
-
-    ul li a {
-        color: white;
-        text-decoration: none;
-    }
-`;
+import { NavWrapper } from './Navigation.styled';
 
 const Navigation = () => {
     return (
