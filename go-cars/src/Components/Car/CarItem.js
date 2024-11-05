@@ -10,20 +10,25 @@ import {
   Reviews,
   LinkItem
 } from './CarItem.styled'
-
+// import { fetchCarById } from '../../requests/getById';
 
 const CarCard = ({ car }) => {
-  const { id, image, name, price, location, year, drive, fuel, reviews } = car;
+  const { _id, image, name, price, location, year, drive, fuel, reviews } = car;
+  // const [carById, setCar] = useState()
+  // const handleGetCar = () => {
+  //   fetchCarById(_id).then(setCar)
+  // }
+
 
   return (
     <CardContainer>
-      <LinkItem to={`/car/${id}`}>
+      <LinkItem to={`/car/${_id}`} >
         <ImageContainer>
           <img src={image} alt={name} />
         </ImageContainer>
         <CardBody>
           <h3>{name}</h3>
-          <Price>{price}</Price>
+          <Price>${price}</Price>
           <Info>
             <Detail><FaGlobe /> {location}</Detail>
             <Detail><FaCar /> {year} • {drive}</Detail>

@@ -108,3 +108,10 @@ export const options = [
     label: 'Name'
   }
 ]
+
+export const fuelOptions = [
+  { value: 'all', label: 'All' },
+  { value: 'Gasoline', label: 'Gasoline' },
+  { value: 'Diesel', label: 'Diesel' },
+  { value: 'Electric', label: 'Electric' }
+];

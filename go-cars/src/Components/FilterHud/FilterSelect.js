@@ -13,12 +13,13 @@ const FilterSelect = ({ label, value, onChange }) => {
     <SelectContainer>
       <Label>{label}</Label>
       <Select value={value} onChange={onChange}>
-        {options.map(({value, label}) => (
-          <option value={value}>{label}</option>
+        {options.map(({value, label}, i) => (
+          <option key={i} value={value}>{label}</option>
         ))}
       </Select>
     </SelectContainer>
   );
 };
+
 
 export default FilterSelect;

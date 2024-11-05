@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import SearchInput from '../FilterHud/SearchInput';
 import SearchButton from '../FilterHud/SearchButton';
 import FilterSelect from '../FilterHud/FilterSelect';
 import FilterButton from '../FilterHud/FilterButton';
-import { carsData } from '../../data/data';
+import FuelFilterSelect from '../FilterHud/FuelFilter';
 import CarCard from './CarItem';
 import { Container } from '../Container/Container';
 import {
@@ -14,50 +14,36 @@ import {
   SelectList, 
   CarsContainer
 } from './CatalogCars.styled'
+import { filterCars } from '../../requests/filterCars';
+import Loader from '../Loader/Loader';
 
 const CatalogCars = () => {
+  const [isLoading, setIsLoading] = useState(true)
     const [searchQuery, setSearchQuery] = useState('');
     const [sortType, setSortType] = useState('year');
-    const [filteredCars, setFilteredCars] = useState(carsData);
-  
+    const [fuel, setFuelType] = useState('all')
+    const [cars, setCars] = useState([])
+
     const handleSearchChange = (event) => {
       setSearchQuery(event.target.value);
+    };
+
+    const handleFuelTypeChange = (event) => {
+      setFuelType(event.target.value);
     };
   
     const handleSortChange = (event) => {
       setSortType(event.target.value);
     };
-  
-    const applyFilters = () => {
-      let result = [...carsData];
 
-      if (searchQuery) {
-        result = result.filter((car) =>
-          car.name.toLowerCase().includes(searchQuery.trim().toLowerCase())
-        );
-      }
+    useEffect(()=> {
+      filterCars(searchQuery.trim(), sortType, fuel).then(setCars)
+      setIsLoading(false)
+    }, [searchQuery, sortType, fuel])
   
-      switch (sortType) {
-        case 'year':
-          result.sort((a, b) => b.year - a.year);
-          break;
-        case 'year_rev':
-          result.sort((a, b) => a.year - b.year);
-          break;
-        case 'price':
-          result.sort((a, b) => a.price - b.price);
-          break;
-        case 'price_rev':
-          result.sort((a, b) => b.price - a.price);
-          break;
-        case 'name':
-          result.sort((a, b) => a.name.localeCompare(b.name));
-          break;
-        default:
-          break;
-      }
-      setFilteredCars(result);
-    };
+    // const applyFilters = () => {
+    //   filterCars(searchQuery, sortType).then(setCars);
+    // };
 
   return (
     <Section>
@@ -66,17 +52,20 @@ const CatalogCars = () => {
           <Heading>Cars Catalog</Heading>
           <FilterContainer>
             <SelectList>
-                <li><FilterSelect label="Sort by " value={sortType} onChange={handleSortChange} /></li>
-                <li><FilterButton onClick={applyFilters}/></li>
-                <li><SearchInput value={searchQuery} onChange={handleSearchChange} /></li>
-                <li><SearchButton onClick={applyFilters} /></li>
+                <li key={0}><FuelFilterSelect label="Fuel type" value={fuel} onChange={handleFuelTypeChange}/></li>
+                <li key={1}><FilterSelect label="Sort by" value={sortType} onChange={handleSortChange} /></li>
+                <li key={2}><FilterButton /></li>
+                <li key={3}><SearchInput value={searchQuery} onChange={handleSearchChange} /></li>
+                <li key={4}><SearchButton  /></li>
             </SelectList>
           </FilterContainer>
+          { isLoading ? <Loader/> :
             <CarsContainer>
-                {filteredCars.map((car, index) => (
-                <CarCard key={index} car={car} />
+                {cars.map((car) => (
+                <CarCard key={car._id} car={car} />
                 ))}
             </CarsContainer>
+            }
         </RecommendWrapper>
       </Container>
     </Section>

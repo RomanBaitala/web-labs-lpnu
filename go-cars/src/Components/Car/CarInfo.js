@@ -22,7 +22,7 @@ const CarItem = ({ car }) => {
         <PageContainer>
             <Image src={car.image} alt={car.name} />
             <Title>{car.name}</Title>
-            <Price>{car.price}</Price>
+            <Price>${car.price}</Price>
             <Location>{car.location}</Location>
             
             <Details>
