@@ -8,10 +8,15 @@ import {
   CarsContainer,
   LoadMoreButton
 } from './RecomenddedCars.styled'
-import { fetchAllCars } from '../../requests/getAll';
+import { fetchAllCars } from '../../api/getAll';
 import Loader from '../Loader/Loader';
 
+import { useDispatch } from 'react-redux';
+// import { getAllCars } from '../../redux/Car/carOperations';
+
 const RecommendedCars = () => {
+
+  const dispatch = useDispatch()
   const [isLoading, setIsLoading] = useState(true)
 
   const [visibleCars, setVisibleCars] = useState(3); 
@@ -27,9 +32,10 @@ const RecommendedCars = () => {
 
 
   useEffect(()=> {
+    // dispatch(getAllCars())
     fetchAllCars().then(setCars)
     setIsLoading(false)
-  }, [])
+  }, [dispatch])
 
   return (
     <Section>

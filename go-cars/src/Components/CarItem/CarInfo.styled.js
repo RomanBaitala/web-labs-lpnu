@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const CarPageWrapper = styled.div `
-    background-color: #1f2a37;
-`
+export const CarPageWrapper = styled.div`
+  background-color: #1f2a37;
+`;
 
 export const PageContainer = styled.div`
   max-width: 1220px;
@@ -11,11 +11,37 @@ export const PageContainer = styled.div`
   color: white;
 `;
 
+export const MainContent = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+`;
+
+export const LeftColumn = styled.div`
+  flex: 2;
+`;
+
+export const RightColumn = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #2a3b4c;
+  border-radius: 8px;
+`;
+
+export const ImageContainer = styled.div`
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 800px; 
+`;
+
 export const Image = styled.img`
   width: 100%;
   height: auto;
   border-radius: 8px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 `;
 
 export const Title = styled.h1`

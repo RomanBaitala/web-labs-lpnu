@@ -14,7 +14,7 @@ import {
   SelectList, 
   CarsContainer
 } from './CatalogCars.styled'
-import { filterCars } from '../../requests/filterCars';
+import { filterCars } from '../../api/filterCars';
 import Loader from '../Loader/Loader';
 
 const CatalogCars = () => {
@@ -40,10 +40,6 @@ const CatalogCars = () => {
       filterCars(searchQuery.trim(), sortType, fuel).then(setCars)
       setIsLoading(false)
     }, [searchQuery, sortType, fuel])
-  
-    // const applyFilters = () => {
-    //   filterCars(searchQuery, sortType).then(setCars);
-    // };
 
   return (
     <Section>

@@ -10,14 +10,9 @@ import {
   Reviews,
   LinkItem
 } from './CarItem.styled'
-// import { fetchCarById } from '../../requests/getById';
 
 const CarCard = ({ car }) => {
   const { _id, image, name, price, location, year, drive, fuel, reviews } = car;
-  // const [carById, setCar] = useState()
-  // const handleGetCar = () => {
-  //   fetchCarById(_id).then(setCar)
-  // }
 
 
   return (
@@ -45,4 +40,4 @@ const CarCard = ({ car }) => {
   );
 };
 
-export default CarCard;
+export default CarCard
