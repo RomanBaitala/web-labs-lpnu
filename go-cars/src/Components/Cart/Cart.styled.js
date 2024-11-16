@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CartContainer = styled.div`
-  min-height: 300px;
+  min-height: 500px;
   padding: 20px;
   margin: 0 auto;
   background-color: #1f2a37;

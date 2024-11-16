@@ -12,11 +12,17 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { carsReducer } from './Car/carSlice';
 import { cartReducer } from './Cart/cartSlice';
+import { userReducer } from './auth/authSlice';
 
 // const persistConfig = {
 //     key: 'root',
 //     storage: storage,
 // };
+
+const userPersistedConfig = {
+    key: 'user',
+    storage: storage,
+};
 
 const carPersistedConfig = {
     key: 'cars',
@@ -30,6 +36,7 @@ const cartPersistedConfig = {
 }
 
 const rootReducer = combineReducers({
+    auth: persistReducer(userPersistedConfig, userReducer),
     cars: persistReducer(carPersistedConfig, carsReducer),
     cart: persistReducer(cartPersistedConfig, cartReducer)
 });

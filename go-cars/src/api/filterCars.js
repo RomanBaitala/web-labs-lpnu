@@ -1,10 +1,10 @@
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:3001/api/cars'
+axios.defaults.baseURL = 'http://localhost:3001/api'
 
 export const filterCars = async (searchQuery, sortType, fuel) => {
   try {
     console.log(process.env.BACK_LINK)
-    const response = await axios.get(`/filtered`
+    const response = await axios.get(`/cars/filtered`
       , {
       params: { searchQuery, sortType, fuel },
     }

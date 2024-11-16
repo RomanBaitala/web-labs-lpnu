@@ -87,8 +87,6 @@ const cartSlice = createSlice({
           }
           
         }
-        // const car = state.carsInCart.find((car) => car._id === carId);
-        //   car.availableQuantity = avaliableQuantity
       })
       .addCase(updateAvaliableQuantity.rejected, handleRejected)
   }
